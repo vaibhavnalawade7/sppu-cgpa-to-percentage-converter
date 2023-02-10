@@ -25,6 +25,7 @@
       </form>
       <div id="result" class="text-center mt-5"><b></b></div>
     </div>
+
     <div class="text-center mt-5">
       <p>For suggestions or feedback, please send a message on <a href="https://www.instagram.com/vaibhavnalawade7/">Instagram</a></p>
     </div>
@@ -44,35 +45,43 @@ form.addEventListener("submit", function(event) {
   event.preventDefault();
 
   const cgpa = parseFloat(document.getElementById("cgpa").value);
-
-if (cgpa > 10) {
-  document.getElementById("result").innerHTML =
-    "<div class='alert alert-danger'>CGPA should not be more than 10</div>";
-} else {
   let percentage;
-  let grade;
-  if (cgpa >= 4 && cgpa <= 4.75) {
+
+  if (cgpa >= 4.00 && cgpa <= 4.75) {
     percentage = (6.6 * cgpa) + 13.5;
-    grade = "D";
   } else if (cgpa > 4.75 && cgpa <= 5.25) {
     percentage = cgpa * 10 - 2.5;
-    grade = "B & C";
   } else if (cgpa > 5.25 && cgpa <= 5.75) {
     percentage = cgpa * 5 + 26.25;
-    grade = "B+";
-  } else if (cgpa > 5.75 && cgpa <= 8.25) {
+  } else if (cgpa > 6.75 && cgpa <= 8.25) {
     percentage = cgpa * 10 - 7.5;
-    grade = "A";
-  } else if (cgpa > 8.25 && cgpa <= 9.5) {
+  } else if (cgpa > 8.25 && cgpa <= 9.50) {
     percentage = cgpa * 12 - 25;
-    grade = "A+";
-  } else if (cgpa >= 9.5) {
+  } else if (cgpa >= 9.50) {
     percentage = cgpa * 20 - 100;
-    grade = "Outstanding";
   }
+
+  let grade;
+  if (percentage >= 80 && percentage <= 100) {
+    grade = "A+";
+  } else if (percentage >= 70 && percentage < 80) {
+    grade = "A";
+  } else if (percentage >= 60 && percentage < 70) {
+    grade = "B+";
+  } else if (percentage >= 50 && percentage < 60) {
+    grade = "B";
+  } else if (percentage >= 40 && percentage < 50) {
+    grade = "C";
+  } else if (percentage >= 33 && percentage < 40) {
+    grade = "D";
+  } else {
+    grade = "Fail";
+  }
+
   const result = document.getElementById("result");
-  result.innerHTML = `<div class="alert alert-success">Percentage: <strong>${percentage.toFixed(2)}</strong><br>Grade: <strong>${grade}</strong></div>`;
+result.innerHTML = `<div class="alert alert-success">Percentage: <strong>${percentage.toFixed(2)}</strong><br>Grade: <strong>${grade}</strong></div>`;
 });
     </script>
+    <center><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="vaibhav7" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a mic😉" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script></center>
   </body>
 </html>
