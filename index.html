@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Pune University CGPA to Percentage Conversion | CGPA Calculator</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Pune University CGPA to Percentage Conversion | CGPA Calculator</h1>
+      <form id="calculator-form" class="form-group mt-5">
+        <label for="cgpa">Enter CGPA:</label>
+        <input
+          type="number"
+          id="cgpa"
+          min="4.00"
+          max="10.00"
+          class="form-control"
+        />
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      </form>
+      <div id="result" class="text-center mt-5"></div>
+    </div>
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    ></script>
+    <script>
+     const form = document.getElementById("calculator-form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const cgpa = parseFloat(document.getElementById("cgpa").value);
+  let percentage;
+
+  if (cgpa >= 4.00 && cgpa <= 4.75) {
+    percentage = (6.6 * cgpa) + 13.5;
+  } else if (cgpa > 4.75 && cgpa <= 5.25) {
+    percentage = cgpa * 10 - 2.5;
+  } else if (cgpa > 5.25 && cgpa <= 5.75) {
+    percentage = cgpa * 5 + 26.25;
+  } else if (cgpa > 6.75 && cgpa <= 8.25) {
+    percentage = cgpa * 10 - 7.5;
+  } else if (cgpa > 8.25 && cgpa <= 9.50) {
+    percentage = cgpa * 12 - 25;
+  } else if (cgpa >= 9.50) {
+    percentage = cgpa * 20 - 100;
+  }
+
+  let grade;
+  if (percentage >= 80 && percentage <= 100) {
+    grade = "A+";
+  } else if (percentage >= 70 && percentage < 80) {
+    grade = "A";
+  } else if (percentage >= 60 && percentage < 70) {
+    grade = "B+";
+  } else if (percentage >= 50 && percentage < 60) {
+    grade = "B";
+  } else if (percentage >= 40 && percentage < 50) {
+    grade = "C";
+  } else if (percentage >= 33 && percentage < 40) {
+    grade = "D";
+  } else {
+    grade = "Fail";
+  }
+
+  const result = document.getElementById("result");
+  result.innerHTML = `Percentage: ${percentage.toFixed(2)}<br>Grade: ${grade}`;
+});
+    </script>
+  </body>
+</html>
