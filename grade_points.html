@@ -1,52 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calculate Average Grade</title>
-	<script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    ></script>
-	<link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+	<meta charset="UTF-8">
+	<title>Calculate SGPA By GP</title>
+	<!-- Add Bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-	<h1>Calculate Average Grade</h1>
-	<form>
-		<label for="input1">Input 1:</label>
-		<input type="text" name="input1" id="input1"><br>
+	<center>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<h1 class="text-center mb-4">Calculate SGPA By GP</h1>
+				<form>
+					<div class="form-group">
+						<label for="input1">DESIGN & ANALYSIS OF ALGO:</label>
+						<input type="text" class="form-control" name="input1" id="input1" placeholder="Enter Grade B+">
+					</div>
 
-		<label for="input2">Input 2:</label>
-		<input type="text" name="input2" id="input2"><br>
+					<div class="form-group">
+						<label for="input2">BLOCKCHAIN TECHNOLOGY:</label>
+						<input type="text" class="form-control" name="input2" id="input2" placeholder="Enter Grade A+">
+					</div>
 
-		<label for="input3">Input 3:</label>
-		<input type="text" name="input3" id="input3"><br>
+					<div class="form-group">
+						<label for="input3">SOFT. TEST. & QLTY ASSURANCE:</label>
+						<input type="text" class="form-control" name="input3" id="input3" placeholder="Enter Grade A">
+					</div>
 
-		<label for="input4">Input 4:</label>
-		<input type="text" name="input4" id="input4"><br>
+					<div class="form-group">
+						<label for="input4">LABORATORY PRACTICE - III:</label>
+						<input type="text" class="form-control" name="input4" id="input4" placeholder="Enter Grade B+">
+					</div>
 
-		<label for="input5">Input 5:</label>
-		<input type="text" name="input5" id="input5"><br>
+					<div class="form-group">
+						<label for="input5">MACHINE LEARNING:</label>
+						<input type="text" class="form-control" name="input5" id="input5" placeholder="Enter Grade C">
+					</div>
 
-		<label for="input6">Input 6:</label>
-		<input type="text" name="input6" id="input6"><br>
+					<div class="form-group">
+						<label for="input6">CYBER SEC. & DIG. FORENSICS:</label>
+						<input type="text" class="form-control" name="input6" id="input6" placeholder="Enter Grade P">
+					</div>
 
-		<label for="input7">Input 7:</label>
-		<input type="text" name="input7" id="input7"><br>
+					<div class="form-group">
+						<label for="input7">PROJECT STAGE - I:</label>
+						<input type="text" class="form-control" name="input7" id="input7" placeholder="Enter Grade B+">
+					</div>
 
-		<label for="input8">Input 8:</label>
-		<input type="text" name="input8" id="input8"><br>
+					<div class="form-group">
+						<label for="input8">LABORATORY PRACTICE - IV:</label>
+						<input type="text" class="form-control" name="input8" id="input8" placeholder="Enter Grade A+">
+					</div>
 
-		<input type="button" value="Calculate Average" onclick="calculateAverage()">
-	</form>
+					<button type="button" class="btn btn-primary" onclick="calculateAverage()">Calculate SGPA</button>
+				</form>
+				<p id="result" class="mt-4"></p>
+			</div>
+		</div>
+	</div>
 
-	<p id="result"></p>
+	<!-- Add Bootstrap script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	<script>
 		// Define the grade point values for each variable
@@ -90,3 +107,6 @@
 		document.getElementById("result").innerHTML = "Average grade point: " + averageGradePoint.toFixed(2);
 	}
 </script>
+	</center>
+</body>
+</html>
