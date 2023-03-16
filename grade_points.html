@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate Average Grade</title>
+</head>
+<body>
+	<h1>Calculate Average Grade</h1>
+	<form>
+		<label for="input1">Input 1:</label>
+		<input type="text" name="input1" id="input1"><br>
+
+		<label for="input2">Input 2:</label>
+		<input type="text" name="input2" id="input2"><br>
+
+		<label for="input3">Input 3:</label>
+		<input type="text" name="input3" id="input3"><br>
+
+		<label for="input4">Input 4:</label>
+		<input type="text" name="input4" id="input4"><br>
+
+		<label for="input5">Input 5:</label>
+		<input type="text" name="input5" id="input5"><br>
+
+		<label for="input6">Input 6:</label>
+		<input type="text" name="input6" id="input6"><br>
+
+		<label for="input7">Input 7:</label>
+		<input type="text" name="input7" id="input7"><br>
+
+		<label for="input8">Input 8:</label>
+		<input type="text" name="input8" id="input8"><br>
+
+		<input type="button" value="Calculate Average" onclick="calculateAverage()">
+	</form>
+
+	<p id="result"></p>
+
+	<script>
+		// Define the grade point values for each variable
+		const gradePoints = {
+			'O': 9.50,
+			'A+': 8.75,
+			'A': 7.95,
+			'B+': 6.95,
+			'B': 5.95,
+			'C': 4.87,
+			'P': 4.12,
+			'F': 1.99
+		};
+
+		// Function to calculate the average
+		function calculateAverage() {
+			// Get the values of the input fields
+			const input1Value = document.getElementById("input1").value;
+			const input2Value = document.getElementById("input2").value;
+			const input3Value = document.getElementById("input3").value;
+			const input4Value = document.getElementById("input4").value;
+			const input5Value = document.getElementById("input5").value;
+			const input6Value = document.getElementById("input6").value;
+			const input7Value = document.getElementById("input7").value;
+			const input8Value = document.getElementById("input8").value;
+
+			// Convert the input values to grade point values
+			const input1GradePoint = gradePoints[input1Value];
+			const input2GradePoint = gradePoints[input2Value];
+			const input3GradePoint = gradePoints[input3Value];
+			const input4GradePoint = gradePoints[input4Value];
+			const input5GradePoint = gradePoints[input5Value];
+			const input6GradePoint = gradePoints[input6Value];
+			const input7GradePoint = gradePoints[input7Value];
+			const input8GradePoint = gradePoints[input8Value];
+
+					// Calculate the average grade point
+		const averageGradePoint = (input1GradePoint + input2GradePoint + input3GradePoint + input4GradePoint + input5GradePoint + input6GradePoint + input7GradePoint + input8GradePoint) / 8;
+
+		// Display the result
+		document.getElementById("result").innerHTML = "Average grade point: " + averageGradePoint.toFixed(2);
+	}
+</script>
