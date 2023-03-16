@@ -65,7 +65,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-	<script>
+<!-- 	<script>
 		// Define the grade point values for each variable
 		const gradePoints = {
 			'O': 9.50,
@@ -106,7 +106,41 @@
 		// Display the result
 		document.getElementById("result").innerHTML = "Average grade point: " + averageGradePoint.toFixed(2);
 	}
+</script> -->
+		<script>
+  const gradePoints = {
+    'o': 9.50,
+    'a+': 8.75,
+    'a': 7.95,
+    'b+': 6.95,
+    'b': 5.95,
+    'c': 4.87,
+    'p': 4.12,
+    'f': 1.99
+  };
+
+  function calculateAverage() {
+    let totalGradePoint = 0;
+    let validInputs = 0;
+
+    for (let i = 1; i <= 8; i++) {
+      const input = document.getElementById('input' + i).value.trim().toLowerCase();
+      if (input in gradePoints) {
+        totalGradePoint += gradePoints[input];
+        validInputs++;
+      }
+    }
+
+    if (validInputs > 0) {
+      const averageGradePoint = totalGradePoint / validInputs;
+      const sgpa = (averageGradePoint - 0.75) / 0.25;
+      document.getElementById('result').innerHTML = `Your SGPA is ${sgpa.toFixed(2)}`;
+    } else {
+      document.getElementById('result').innerHTML = 'Please enter valid grades';
+    }
+  }
 </script>
+
 	</center>
 </body>
 </html>
